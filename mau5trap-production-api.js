@@ -1,5 +1,5 @@
-// mau5trap-production-api.js
-// Production API with authentication, multi-tenant access, and reporting
+// mau5trap-production-api.js (Concept)
+// Unofficial Fan Project - Educational Purpose Only
 
 const express = require('express');
 const cors = require('cors');
@@ -158,7 +158,17 @@ const User = sequelize.define('User', {
 const Artist = sequelize.define('Artist', {
     id: { type: DataTypes.STRING, primaryKey: true }, // e.g., 'art_deadmau5'
     name: { type: DataTypes.STRING, allowNull: false },
+    status: { type: DataTypes.STRING, defaultValue: 'active' }, // active, archived, developing
     data: { type: DataTypes.JSON, allowNull: false } // Stores the entire complex object
+});
+
+const Stats = sequelize.define('Stats', {
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    artistId: { type: DataTypes.STRING, allowNull: false },
+    platform: { type: DataTypes.STRING, allowNull: false },
+    listeners: { type: DataTypes.INTEGER, defaultValue: 0 },
+    streams: { type: DataTypes.BIGINT, defaultValue: 0 },
+    recordedAt: { type: DataTypes.DATE, defaultValue: DataTypes.NOW }
 });
 
 // INITIALIZATION & SEEDING

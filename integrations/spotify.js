@@ -2,6 +2,7 @@
 // Spotify for Artists API Integration
 
 const SpotifyWebApi = require('spotify-web-api-node');
+const SafeStatsSchema = require('../modules/SafeStatsSchema');
 
 class SpotifyIntegration {
     constructor() {
@@ -58,7 +59,7 @@ class SpotifyIntegration {
             }, 0);
 
             // Map Spotify data to mau5trap schema
-            return {
+            const rawData = {
                 monthlyListeners: monthlyListeners,
                 totalStreams: estimatedStreams,
                 growthRate: this.calculateGrowthRate(artist.popularity), // Derived from popularity
@@ -72,8 +73,11 @@ class SpotifyIntegration {
                     spotifyUrl: artist.external_urls.spotify
                 }
             };
+
+            return SafeStatsSchema.parse(rawData);
         } catch (error) {
             console.error('Spotify API Error:', error.message);
+            // Re-throw or handle validation error
             throw error;
         }
     }

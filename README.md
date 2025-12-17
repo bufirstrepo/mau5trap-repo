@@ -1,8 +1,11 @@
-# mau5trap Intelligence Platform (mau5trap-OS v5.0)
+# mau5trap Intelligence Platform (Concept)
 
-> **The Central Operating System for Label Operations, A&R, and Artist Intelligence.**
+> [!CAUTION]
+> **UNOFFICIAL FAN PROJECT**: This is a concept application created for educational and portfolio purposes only. It is **NOT** affiliated with, endorsed by, or connected to **mau5trap** or **Seven20** management. All trademarks, artist names, and logos belong to their respective owners.
 
-This platform serves as the nerve center for mau5trap, providing real-time revenue analytics, artist scouting, marketing automation, and tour operations management.
+> **A Conceptual Operating System for Modern Record Label Management.**
+
+This platform demonstrates a theoretical "nerve center" for an electronic music label, providing revenue analytics, artist scouting, and automation tools.
 
 ## 🚀 Two Interfaces, One Core
 The system consists of a robust Node.js API backend powering two distinct frontend experiences:

@@ -1,7 +1,7 @@
 {
-  "name": "mau5trap-authority-platform",
+  "name": "electronic-label-os",
   "version": "5.0.0",
-  "description": "Central Operating System for Mau5Trap",
+  "description": "Concept Operating System for Electronic Music Labels (Fan Project)",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -32,7 +32,8 @@
     "sequelize": "^6.37.7",
     "spotify-web-api-node": "^5.0.2",
     "sqlite3": "^5.1.7",
-    "winston": "^3.19.0"
+    "winston": "^3.19.0",
+    "zod": "^4.2.1"
   },
   "engines": {
     "node": ">=18.0.0"
